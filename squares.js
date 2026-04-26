@@ -1,6 +1,6 @@
-let squareArea = document.querySelector("#squareArea)
-// let SquareArea = document.getElementById('squareArea');
-let squareCount =  parseInt(Math.random()* 21)+ 30;//30-50
+let squareArea = document.querySelector("#squarearea");
+// let squareArea = document.getElementById('squarearea);
+let squareCount =  parseInt(Math.random()*21)+30; //30-50
 let maxZ = 1;
 
 for (let i = 0; i < squareCount;i++) {
@@ -29,20 +29,19 @@ function addSquare() {
   square.style.zIndex = 0;
   
   //On-click behavior for squares
-  square.addEventListener("click", function()){
-    if (parseInt(square.style.zIndex) === maxZ)  {
-      //Square already on top
-      square.remove
-    } else {
-      //Bring square to front
-      maxZ++;
-      square.style.zIndex = maxZ;
-    }
-  
-   });
+  square.addEventListener("click", function () {
+        if (parseInt(square.style.zIndex) === maxZ) {
+            // Already on top — delete it
+            square.remove();
+        } else {
+            // Bring to front
+            maxZ++;
+            square.style.zIndex = maxZ;
+        }
+    });
 
-   squareArea.append(square);
-  }
+    squareArea.append(square);
+}
 
 function getRandomColor(){
   //Make color string
@@ -68,9 +67,3 @@ function changeColor() {
 //Wire up buttons
 document.querySelector("#addBtn").addEventListener("click", addSquare);
 document.querySelector("#colorBtn").addEventListener("click", changeColors);
-
-
-
-}
-
-                                        
